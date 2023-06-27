@@ -8,6 +8,15 @@ router.get('/', (_req, res) => {
   res.send(patientService.getEntries());
 });
 
+router.get('/:id', (req, res) => {
+  const id: string = req.params.id;
+  const patients = patientService.getEntries();
+
+  const patient = patients.find(patient => patient.id === id);
+  res.json(patient);
+  
+});
+
 router.post('/', (req, res) => {
   try {
     const newPatientEntry = toNewPatientEntry(req.body);

@@ -58,7 +58,7 @@ const toNewDiaryEntry = (object: unknown): NewPatientEntry => {
       ssn: parseSsn(object.ssn),
       name: parseName(object.name),
       dateOfBirth: parseDate(object.dateOfBirth),
-      gender: parseGender(object.gender)
+      gender: parseGender(object.gender),
     };
     return newEntry;
   }
